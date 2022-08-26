@@ -1,4 +1,4 @@
-This is my digital resume built by using Python and its library Streamlit. All the credit goes to [Sven](https://github.com/Sven-Bo)
+This is my digital resume built by using Python and its library Streamlit. All the credit goes to [Sven](https://github.com/Sven-Bo)!
 
 Find his:
 - repository here: [https://github.com/Sven-Bo/digital-resume-template-streamlit](https://github.com/Sven-Bo/digital-resume-template-streamlit)
