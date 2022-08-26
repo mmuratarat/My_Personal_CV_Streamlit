@@ -1,12 +1,12 @@
 from pathlib import Path
 import streamlit as st
 from PIL import Image
-
+import webbrowser
 
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-resume_file = current_dir / "assets" / "CV.pdf"
+resume_URL = "https://mmuratarat.github.io/files/cv/CV.pdf"
 profile_pic = current_dir / "assets" / "profile-pic.png"
 favicon_pic = current_dir / "assets" / "favicon.ico"
 
@@ -29,25 +29,19 @@ st.set_page_config(page_title=PAGE_TITLE, page_icon=im, layout="wide")
 # --- LOAD CSS, PDF & PROFIL PIC ---
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
-with open(resume_file, "rb") as pdf_file:
-    PDFbyte = pdf_file.read()
 profile_pic = Image.open(profile_pic)
 
 
 # --- HERO SECTION ---
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap = 'small')
 with col1:
     st.image(profile_pic, width=350)
 
 with col2:
     st.title(NAME)
     st.write(DESCRIPTION)
-    st.download_button(
-        label=" 📄 Download Resume",
-        data=PDFbyte,
-        file_name=resume_file.name,
-        mime="application/octet-stream",
-    )
+    if st.button('Download Full Resume'):
+        webbrowser.open_new_tab(resume_URL)
     st.write("📌", WEBPAGE)
     st.write("📌", EMAIL)
     st.write("📌", LINKEDIN)
@@ -323,15 +317,17 @@ st.write("---")
 st.write(
     """
     - ► **Mustafa Murat Arat**, “Testing Export-Led Growth Hypothesis: The Case of Turkey, 1961-2010”, Applied Statistics 2012, Ribno, Slovenia, September 23 – 26, 2012.
-    - ► Elcin Ergin, **Mustafa Murat Arat**, Cem Iyigun, Inci Batmaz, “Short-Term Electricity Load Forecasting Via Nonparametric Prediction Methods”, EURO-INFORMS Joint International Meeting: 26th European Conference on Operational Research, Rome, Italy, July 1 - 4, 2013.
-    - ► **Mustafa Murat Arat**, Elcin Ergin, “Short Term Load Forecasting Using Support Vector Regression”, European Conference on Data Analysis by The German Classification Society (GfKl) and the French speaking Classification Society (SFC), Luxembourg City, Luxembourg, July 1 – 4, 2013.
-    - ► **Mustafa Murat Arat**, Serpil Aktas Altunay, "Generalized Maximum Entropy Approach To Unreplicated Factorial Experiments", The 13th Annual Conference of the European Network for Business and Industrial Statistics (ENBIS-13), September 15 – 19, 2013.
-    - ► **Mustafa Murat Arat**, “Comparison of SVM and LS-SVM For Regression”, y-BIS 2013: Joint Meeting of Young Business and Industrial Statisticians, sponsored by International Society for Business and Industrial Statistics (ISBIS) and European Network for Business and Industrial Statistics (ENBIS), Istanbul, Turkey, September 19 – 21, 2013
-    - ► Michel Ballings, Neeraj Bharadwaj, Prasad Naik, George Miller Moore, **Mustafa Murat Arat**, “But Wait, There’s More! Deep Learning of Sales Elasticity of Sales Pitches”, Theory + Practice in Marketing Conference, Columbia University, New York, NY, USA, May 18, 2019.
-    - ► **Mustafa Murat Arat**, George Miller Moore, Michel Ballings, "Maximizing Insights from Customer Data Streams", Interactive Marketing Research Conference, Houston, TX, USA, March 27 – 29, 2019.
-    - ► **Mustafa Murat Arat**, Michel Ballings, George Miller Moore, “Breaking Through Barriers to Deep Learning Adoption in Customer Behavior Modeling”, INFORMS Annual Meeting 2019, Seattle, WA, USA, October 20 - 23, 2019.
-    - ► Neeraj Bharadwaj, Michel Ballings, Prasad Naik, Miller Moore, **Mustafa Murat Arat**, “Purchase Impact Of A Salesperson’s Facial Expressions: Large-Scale Video Analysis Using Deep Learning", 2020 Winter AMA Academic Conference, San Diego, CA, USA, February 14 - 16, 2020.
-    - ► Osman Tolga Kaskati, **Mustafa Murat Arat**, Fatma Kaymakamtorunlari Deni̇z, Emre Keski̇n, “Popülasyon Genetiği Çalışmalarında Mantel Testi Üzerinde Bir Uygulama”, 22nd Local and 5th International Biostatistics Conference, Online, October 28 - 30, 2021.
+    - ► _Elcin Ergin_, **Mustafa Murat Arat**, Cem Iyigun, Inci Batmaz, “Short-Term Electricity Load Forecasting Via Nonparametric Prediction Methods”, EURO-INFORMS Joint International Meeting: 26th European Conference on Operational Research, Rome, Italy, July 1 - 4, 2013.
+    - ► **_Mustafa Murat Arat_**, Elcin Ergin, “Short Term Load Forecasting Using Support Vector Regression”, European Conference on Data Analysis by The German Classification Society (GfKl) and the French speaking Classification Society (SFC), Luxembourg City, Luxembourg, July 1 – 4, 2013.
+    - ► **_Mustafa Murat Arat_**, Serpil Aktas Altunay, "Generalized Maximum Entropy Approach To Unreplicated Factorial Experiments", The 13th Annual Conference of the European Network for Business and Industrial Statistics (ENBIS-13), September 15 – 19, 2013.
+    - ► **_Mustafa Murat Arat_**, “Comparison of SVM and LS-SVM For Regression”, y-BIS 2013: Joint Meeting of Young Business and Industrial Statisticians, sponsored by International Society for Business and Industrial Statistics (ISBIS) and European Network for Business and Industrial Statistics (ENBIS), Istanbul, Turkey, September 19 – 21, 2013
+    - ► _Michel Ballings_, Neeraj Bharadwaj, Prasad Naik, George Miller Moore, **Mustafa Murat Arat**, “But Wait, There’s More! Deep Learning of Sales Elasticity of Sales Pitches”, Theory + Practice in Marketing Conference, Columbia University, New York, NY, USA, May 18, 2019.
+    - ► **Mustafa Murat Arat**, George Miller Moore, _Michel Ballings_, "Maximizing Insights from Customer Data Streams", Interactive Marketing Research Conference, Houston, TX, USA, March 27 – 29, 2019.
+    - ► **_Mustafa Murat Arat_**, Michel Ballings, George Miller Moore, “Breaking Through Barriers to Deep Learning Adoption in Customer Behavior Modeling”, INFORMS Annual Meeting 2019, Seattle, WA, USA, October 20 - 23, 2019.
+    - ► _Neeraj Bharadwaj_, Michel Ballings, Prasad Naik, Miller Moore, **Mustafa Murat Arat**, “Purchase Impact Of A Salesperson’s Facial Expressions: Large-Scale Video Analysis Using Deep Learning", 2020 Winter AMA Academic Conference, San Diego, CA, USA, February 14 - 16, 2020.
+    - ► _Osman Tolga Kaskati_, **Mustafa Murat Arat**, Fatma Kaymakamtorunlari Deni̇z, Emre Keski̇n, “Popülasyon Genetiği Çalışmalarında Mantel Testi Üzerinde Bir Uygulama”, 22nd Local and 5th International Biostatistics Conference, Online, October 28 - 30, 2021.
+    -
+    - _Italic means who presents the paper._
     """
     )
 
