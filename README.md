@@ -1,25 +1,13 @@
 # Build A Digital Resume Using Python & Streamlit
-Create a digital resume in minutes with Python and Streamlit. In this tutorial, I'll show you what it takes to build a digital resume using Python and Streamlit.<br>
 
-Feel free to use this template and adjust it to your needs & linking.<br>
+This is my digital resume. All the credit goes to [Sven]([https://github.com/divanov11](https://github.com/Sven-Bo))
 
-💡 **The website design is inspired by [@divanov11](https://github.com/divanov11)** 💡 <br>
 Find his:
-- repository here: https://github.com/divanov11/Digital-Resume
-- YouTube video here: https://youtu.be/clwpf3VwCZQ
+- repository here: [https://github.com/divanov11/Digital-Resume](https://github.com/Sven-Bo/digital-resume-template-streamlit)
+- Python and VBA Webpage: [https://www.pythonandvba.com/](https://www.pythonandvba.com/)
 
 ## Live Demo
-👉 **https://resume.pythonandvba.com/**
-
-## Screenshots
-![Demo1](./assets/demo1.png?raw=true "Demo1")
-![Demo2](./assets/demo2.png?raw=true "Demo2")
-![Demo3](./assets/demo3.png?raw=true "Demo3")
-
-## Video Tutorial
-..will follow soon!
-[![YouTube Video](https://img.youtube.com/vi/XXX/0.jpg)](https://youtu.be/XXX)
-
+👉 **[https://mmuratarat-my-personal-cv-streamlit-app-4afui5.streamlitapp.com/](https://mmuratarat-my-personal-cv-streamlit-app-4afui5.streamlitapp.com/)**
 
 ## Requirements
 Install the dependencies with pip
@@ -31,18 +19,5 @@ streamlit==1.12.0
 ## Run the app
 Terminal
 ```
-# vanilla terminal
 streamlit run app.py
 ```
-
-## About Me
-- Sven from Coding Is Fun
-- YouTube: https://youtube.com/c/CodingIsFun
-- Website: https://pythonandvba.com
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X7X47Q0EG)
-
-## Feedback
-If you have any feedback, please reach out to me at contact@pythonandvba.com
-![Logo](https://www.pythonandvba.com/banner-img)
-# My_Personal_CV_Streamlit
