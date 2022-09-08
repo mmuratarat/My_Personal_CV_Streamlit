@@ -5,6 +5,9 @@ Find his:
 - Python and VBA Webpage: [https://www.pythonandvba.com/](https://www.pythonandvba.com/)
 
 ## Live Demo
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mmuratarat-my-personal-cv-streamlit-app-4afui5.streamlitapp.com/)
+
 👉 **[https://mmuratarat-my-personal-cv-streamlit-app-4afui5.streamlitapp.com/](https://mmuratarat-my-personal-cv-streamlit-app-4afui5.streamlitapp.com/)**
 
 ## Requirements
